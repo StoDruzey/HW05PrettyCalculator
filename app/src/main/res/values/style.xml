@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="memory_button">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="backgroundTint">#314d99</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginStart">2dp</item>
+        <item name="android:layout_marginEnd">2dp</item>
+        <item name="cornerRadius">15dp</item>
+    </style>
+
+    <style name="number_button">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="backgroundTint">#039BE5</item>
+        <item name="android:textSize">40sp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginStart">2dp</item>
+        <item name="android:layout_marginEnd">2dp</item>
+        <item name="cornerRadius">15dp</item>
+    </style>
+
+    <style name="action_button">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="backgroundTint">#82388a</item>
+        <item name="android:textSize">40sp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginStart">2dp</item>
+        <item name="android:layout_marginEnd">2dp</item>
+        <item name="cornerRadius">15dp</item>
+    </style>
+
+    <style name="cancel_button">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="backgroundTint">#de0b0b</item>
+        <item name="android:textSize">40sp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginStart">2dp</item>
+        <item name="android:layout_marginEnd">2dp</item>
+        <item name="cornerRadius">15dp</item>
+    </style>
+
+    <style name="del_button">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="backgroundTint">#FC9700</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginStart">2dp</item>
+        <item name="android:layout_marginEnd">2dp</item>
+        <item name="cornerRadius">15dp</item>
+    </style>
+
+    <style name="display_field">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">200sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:textSize">40sp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textAlignment">textEnd</item>
+        <item name="android:text">0</item>
+        <item name="android:layout_margin">2dp</item>
+    </style>
+
+    <style name="memory_field">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">80sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textAlignment">textEnd</item>
+        <item name="android:layout_margin">2dp</item>
+    </style>
+
+</resources>
