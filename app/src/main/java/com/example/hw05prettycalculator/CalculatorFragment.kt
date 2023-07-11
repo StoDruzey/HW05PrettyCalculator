@@ -8,18 +8,26 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.hw05prettycalculator.Computer
 import com.example.hw05prettycalculator.databinding.FragmentCalculatorBinding
+import kotlin.math.exp
 
 class CalculatorFragment : Fragment() {
     private var _binding: FragmentCalculatorBinding? = null
     private val binding get() = requireNotNull(_binding)
 
     private var expression = BLANK_STRING
-    var numLeftBraces = 0
-    var numRightBraces = 0
-    val historyExpressions = mutableListOf<String>()
-    var operationCounter: Byte = 0 //it can't be more than 2 operations in a row
-    var stopDot = false //it is not acceptable to add dot
-    var memory = BLANK_STRING
+    private var result = BLANK_STRING
+    private var numLeftBraces = 0
+    private var numRightBraces = 0
+    private val historyExpressions = mutableListOf<String>()
+    private var operationCounter: Byte = 0 //it can't be more than 2 operations in a row
+    private var stopDot = false //it is not acceptable to add dot
+    private var memory = BLANK_STRING
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        expression = savedInstanceState?.getString(EXPRESSION_KEY) ?: ""
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,7 +43,7 @@ class CalculatorFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         with (binding) {
-            showDisplayField(BLANK_STRING)
+            showDisplayField(expression)
 //            showResultField(BLANK_STRING)
             showMemoryField(BLANK_STRING)
 
@@ -168,10 +176,10 @@ class CalculatorFragment : Fragment() {
             }
 
             buttonEqual.setOnClickListener {
-                expression = getResult(expression)
+                result = getResult(expression)
 //                showResultField(expression)
 //                showDisplayField(expression.plus("=$result"))
-                showDisplayField(expression)
+                showDisplayField(expression + "=" + result)
             }
 
             buttonMemoryPlus.setOnClickListener {
@@ -251,9 +259,16 @@ class CalculatorFragment : Fragment() {
         }
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+
+        outState.putString(EXPRESSION_KEY, expression)
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
 
+        expression = result
         _binding = null
     }
 
@@ -388,5 +403,6 @@ class CalculatorFragment : Fragment() {
         private const val DOT = "."
         private const val ZERO = "0"
         private const val BLANK_STRING = ""
+        private const val EXPRESSION_KEY = "expression_key"
     }
 }
